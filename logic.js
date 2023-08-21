@@ -30,4 +30,12 @@ function operate(a,operator,b){
             return multiply(a,b)
     }
 }
-console.log(multiply(3,5))
+
+
+buttons = document.querySelectorAll('button')
+
+buttons.forEach(button => {
+    button.addEventListener("click", function(){
+        document.getElementById('up').innerHTML=button.id.value
+    })
+});
