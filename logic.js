@@ -43,6 +43,17 @@ function addNumber(Event){
     document.getElementsByClassName('up')[0].innerHTML += Event.target.id
 }
 
+function operatorClick(Event){
+    if (a === undefined || (a*b === undefined)){
+        a = parseInt(document.getElementsByClassName('up')[0].innerHTML)
+        operator = Event.target.id
+    } else{
+        b = parseInt(document.getElementsByClassName('up')[0].innerHTML)
+        operator = Event.target.id
+    }
+    document.getElementsByClassName('up')[0].innerHTML = "" 
+}
+
 function reset(){
     resetButton.addEventListener("click", function(){
         document.getElementsByClassName('up')[0].innerHTML = ''
@@ -53,3 +64,28 @@ function reset(){
     })
 }
 
+function result(){
+    if (a === undefined){
+        ;;
+    }
+    if (b === undefined && operator === undefined){
+        document.getElementsByClassName('down')[0].innerHTML = document.getElementsByClassName('up')[0].innerHTML
+    }
+    else{
+        b = parseInt(document.getElementsByClassName('up')[0].innerHTML)
+        document.getElementsByClassName('down')[0].innerHTML = operate(a,operator,b)
+        a = operate(a,operator,b)
+    }
+}
+
+numberButtons.forEach(button => {
+    button.addEventListener('click',addNumber)
+});
+
+operatorButtons.forEach(operator => {
+    operator.addEventListener('click', operatorClick)
+});
+
+resultButton.addEventListener('click', result)
+
+reset()
