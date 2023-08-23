@@ -25,20 +25,37 @@
     padding: 0;
     flex-wrap: wrap;
     flex-direction: column;
+    width: 100%;
+    
 }
 
+.button-row{
+    display: flex;
+    justify-content: start;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 .button-layout{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 button{
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+    width: 25%;
+    height: 70%;
+    margin: 10px 5px 10px 5px;
+    padding: 5px;
     border-radius: 4px;
 }
 
+.operator{
+    background-color: lightyellow;
+}
+
+#C{
+    background-color: coral;
+}
 .display{
     display: flex;
     flex-direction: column;
