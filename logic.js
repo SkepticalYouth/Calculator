@@ -32,10 +32,24 @@ function operate(a,operator,b){
 }
 
 
-buttons = document.querySelectorAll('button')
+numberButtons = document.querySelectorAll('.number')
+specialButtons = document.querySelectorAll('.special')
+operatorButtons = document.querySelectorAll('.operator')
+resetButton = document.getElementById('C')
+resultButton = document.getElementById('=')
 
-buttons.forEach(button => {
-    button.addEventListener("click", function(){
-        document.getElementById('up').innerHTML=button.id.value
+
+function addNumber(Event){
+    document.getElementsByClassName('up')[0].innerHTML += Event.target.id
+}
+
+function reset(){
+    resetButton.addEventListener("click", function(){
+        document.getElementsByClassName('up')[0].innerHTML = ''
+        document.getElementsByClassName('down')[0].innerHTML = ''
+        a = undefined
+        b = undefined
+        operator = undefined
     })
-});
+}
+
