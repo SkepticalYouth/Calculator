@@ -38,7 +38,7 @@ operatorButtons = document.querySelectorAll('.operator')
 resetButton = document.getElementById('C')
 resultButton = document.getElementById('=')
 
-
+//Logical function for typing number
 function addNumber(Event){
     if (document.getElementsByClassName('down')[0].innerHTML === ''){
         document.getElementsByClassName('up')[0].innerHTML += Event.target.id
@@ -81,7 +81,8 @@ function reset(){
 
 function result(){
     if (a === undefined){
-        ;;
+        document.getElementsByClassName('down')[0].innerHTML = document.getElementsByClassName('up')[0].innerHTML
+        a = parseInt(document.getElementsByClassName('down')[0].innerHTML)
     }
     if (b === undefined && operator === undefined){
         document.getElementsByClassName('down')[0].innerHTML = document.getElementsByClassName('up')[0].innerHTML
@@ -91,6 +92,8 @@ function result(){
         document.getElementsByClassName('down')[0].innerHTML = operate(a,operator,b)
         a = operate(a,operator,b)
     }
+    b = undefined
+    operator = undefined
 }
 
 numberButtons.forEach(button => {
