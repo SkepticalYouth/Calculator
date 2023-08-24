@@ -10,9 +10,9 @@ This is my attempt at the Calculator Project, which is part of Odin's curriculum
   - [x] Support natural number
   - [ ] Support float
   - [ ] Support negative number
-- [ ] Animation for hovering above buttons
-- [ ] Sound effect for clicking buttons
-- [ ] Button layout doesn't change when screen resizes
+- [x] Animation for hovering above buttons
+- ~~[ ] Sound effect for clicking buttons~~
+- [x] Button layout doesn't change when screen resizes
 - [ ] Functional Calculator
   - [x] Storing operation result to be used for next calculation
   - [x] Pressing a button after getting result adds number to the right of a

@@ -47,14 +47,19 @@ button{
     margin: 10px 5px 10px 5px;
     padding: 5px;
     border-radius: 4px;
+    transition: background-color 3ms;
+}
+
+button:hover{
+    background-color: cornflowerblue;
 }
 
 .operator{
     background-color: lightyellow;
 }
 
-#C{
-    background-color: coral;
+.reset{
+    background-color: lightcoral;
 }
 .display{
     display: flex;
