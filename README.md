@@ -6,13 +6,16 @@ This is my attempt at the Calculator Project, which is part of Odin's curriculum
   - [x] Numbers from 0-9
   - [x] Operators +,-,*,/
   - [x] Reset button
-- [x] Basic Math Operators & Operator Logic
+- [] Functional math logic
+  - [x] Support natural number
+  - [ ] Support float
+  - [ ] Support negative number
 - [ ] Animation for hovering above buttons
 - [ ] Sound effect for clicking buttons
 - [ ] Button layout doesn't change when screen resizes
 - [ ] Functional Calculator
-  - [x] Remember the result and store it as a
-  - [ ] Pressing a button after getting result adds number to the right of a
+  - [x] Storing operation result to be used for next calculation
+  - [x] Pressing a button after getting result adds number to the right of a
   - [ ] Number cannot overflow the diplay screen
 
 ### Extra credits

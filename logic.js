@@ -3,19 +3,19 @@ let b
 let operator
 
 function add(a,b){
-    return a+b
+    return Math.round(a+b)
 }
 
 function subtract(a,b){
-    return a-b
+    return Math.round(a-b)
 }
 
 function multiply(a,b){
-    return a*b
+    return Math.round(a*b)
 }
 
 function divide(a,b){
-    return a/b
+    return Math.round(a/b)
 }
 
 function operate(a,operator,b){
@@ -40,9 +40,17 @@ resultButton = document.getElementById('=')
 
 
 function addNumber(Event){
-    document.getElementsByClassName('up')[0].innerHTML += Event.target.id
+    if (document.getElementsByClassName('down')[0].innerHTML === ''){
+        document.getElementsByClassName('up')[0].innerHTML += Event.target.id
+    } else {
+        document.getElementsByClassName('up')[0].innerHTML = document.getElementsByClassName('down')[0].innerHTML + Event.target.id
+        document.getElementsByClassName('down')[0].innerHTML=''
+        a = parseInt(document.getElementsByClassName('up')[0].innerHTML)
+    }
+    
 }
 
+//Logic for the mathematical operators button
 function operatorClick(Event){
     if (a === undefined || (a*b === undefined)){
         a = parseInt(document.getElementsByClassName('up')[0].innerHTML)
@@ -51,9 +59,16 @@ function operatorClick(Event){
         b = parseInt(document.getElementsByClassName('up')[0].innerHTML)
         operator = Event.target.id
     }
-    document.getElementsByClassName('up')[0].innerHTML = "" 
+    if (document.getElementsByClassName('up')[0].innerHTML !== '' && document.getElementsByClassName('down')[0].innerHTML !== ''){
+        document.getElementsByClassName('up')[0].innerHTML = ""
+        document.getElementsByClassName('down')[0].innerHTML = ""
+    } else{
+        document.getElementsByClassName('up')[0].innerHTML = ""
+    }
+    
 }
 
+//Logic for C
 function reset(){
     resetButton.addEventListener("click", function(){
         document.getElementsByClassName('up')[0].innerHTML = ''
